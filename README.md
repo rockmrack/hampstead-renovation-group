@@ -2,18 +2,33 @@
 
 **The most advanced property infrastructure in London.**
 
+> *The Operating System for North West London Property.*
+
 ## Overview
 
-This is the official website for Hampstead Renovations Group, showcasing our vertically integrated property ecosystem in North West London.
+This is the **HRG Holding** website - the "Mothership" of the Hampstead Renovations Group ecosystem. It showcases our vertically integrated property empire spanning 8+ digital properties and 4 AI intelligence tools.
+
+**🌍 [View Full Ecosystem Documentation](ECOSYSTEM.md)** - Complete monorepo architecture, tech stack, and strategic vision.
 
 ## Features
 
-- Modern Next.js 15 with TypeScript
-- Tailwind CSS for premium styling
-- Fully responsive design
-- Smooth scrolling and animations
-- SEO optimized
-- Ready for Vercel deployment
+### Landing Page
+
+- Modern Next.js 15 with TypeScript and Client Components
+- Advanced CSS animations and scroll effects
+- Fully responsive design (mobile, tablet, desktop)
+- Interactive service cards with hover effects
+- Gradient effects and visual polish
+- Mobile-first navigation with animated menu
+- SEO optimized with comprehensive metadata
+
+### Ecosystem Integration
+
+- Consumer Brands: 5 front-facing websites
+- Intelligence Grid: 4 AI-powered tools
+- Monorepo architecture ready (see [ECOSYSTEM.md](ECOSYSTEM.md))
+- Shared component library foundation
+- Vercel deployment optimized
 
 ## Getting Started
 
