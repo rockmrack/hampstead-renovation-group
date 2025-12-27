@@ -22,7 +22,7 @@ export default function Home() {
         <div className="absolute inset-0" style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
                            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundSize: '80px 80px'
         }} />
       </div>
 
@@ -30,14 +30,14 @@ export default function Home() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl' : 'bg-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="text-xl font-light tracking-[0.3em] hover:tracking-[0.4em] transition-all duration-300">
+        <div className="max-w-[1600px] mx-auto px-8 lg:px-12">
+          <div className="flex justify-between items-center h-28">
+            <div className="text-2xl font-light tracking-[0.3em] hover:tracking-[0.4em] transition-all duration-300">
               HAMPSTEAD
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8 text-sm font-light">
+            <div className="hidden md:flex space-x-12 text-base font-light">
               <Link href="#manifesto" className="hover:text-gray-300 transition-colors relative group">
                 <span>The Manifesto</span>
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"/>
@@ -50,14 +50,14 @@ export default function Home() {
                 <span>Intelligence</span>
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"/>
               </Link>
-              <Link href="#contact" className="px-6 py-2 border border-white/30 hover:bg-white hover:text-black transition-all duration-300">
+              <Link href="#contact" className="px-8 py-3 border border-white/30 hover:bg-white hover:text-black transition-all duration-300">
                 Contact
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden relative w-6 h-6"
+              className="md:hidden relative w-8 h-8"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className={`absolute h-0.5 w-full bg-white transition-all duration-300 ${
@@ -77,7 +77,7 @@ export default function Home() {
         <div className={`md:hidden transition-all duration-500 overflow-hidden ${
           mobileMenuOpen ? 'max-h-96 border-t border-white/10' : 'max-h-0'
         }`}>
-          <div className="px-6 py-8 space-y-4 bg-black/95 backdrop-blur-xl">
+          <div className="px-8 py-10 space-y-6 bg-black/95 backdrop-blur-xl text-lg">
             <Link href="#manifesto" className="block hover:text-gray-300 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               The Manifesto
             </Link>
@@ -94,19 +94,19 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 lg:px-8 min-h-screen flex items-center">
+      {/* Hero Section - MASSIVE */}
+      <section className="relative pt-48 pb-32 px-8 lg:px-12 min-h-screen flex items-center">
         <div className="absolute inset-0 bg-gradient-radial from-blue-950/20 via-transparent to-transparent opacity-40"/>
-        <div className="max-w-6xl mx-auto relative z-10 w-full">
-          <div className="space-y-12 animate-fade-in">
+        <div className="max-w-[1800px] mx-auto relative z-10 w-full">
+          <div className="space-y-20 animate-fade-in">
             <div className="inline-block">
-              <div className="text-xs tracking-[0.4em] text-gray-400 mb-2 animate-slide-down">
-                PALACE COURT, NW3
+              <div className="text-sm tracking-[0.5em] text-gray-400 mb-4 animate-slide-down uppercase">
+                Palace Court, NW3
               </div>
-              <div className="h-px w-16 bg-gradient-to-r from-white/50 to-transparent"/>
+              <div className="h-px w-24 bg-gradient-to-r from-white/50 to-transparent"/>
             </div>
 
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-light leading-[0.9] tracking-tight animate-slide-up">
+            <h1 className="text-7xl md:text-[10rem] lg:text-[14rem] font-light leading-[0.85] tracking-tight animate-slide-up">
               The Analog Era<br />
               of Property is<br />
               <span className="italic bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent animate-gradient">
@@ -114,73 +114,73 @@ export default function Home() {
               </span>.
             </h1>
 
-            <div className="flex flex-col sm:flex-row gap-6 pt-8 animate-slide-up-delayed">
+            <div className="flex flex-col sm:flex-row gap-8 pt-12 animate-slide-up-delayed">
               <Link
                 href="#ecosystem"
-                className="group px-8 py-4 bg-white text-black font-light tracking-wider hover:bg-gray-100 transition-all duration-300 relative overflow-hidden"
+                className="group px-12 py-6 bg-white text-black font-light tracking-[0.2em] hover:bg-gray-100 transition-all duration-300 relative overflow-hidden text-lg"
               >
                 <span className="relative z-10">EXPLORE THE SYSTEM</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity"/>
               </Link>
               <Link
                 href="#manifesto"
-                className="px-8 py-4 border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300 font-light tracking-wider"
+                className="px-12 py-6 border-2 border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300 font-light tracking-[0.2em] text-lg"
               >
                 READ THE MANIFESTO
               </Link>
             </div>
 
-            <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-delayed">
-              <div>
-                <div className="text-4xl font-light mb-2">8+</div>
-                <div className="text-sm text-gray-400">Digital Properties</div>
+            <div className="pt-20 grid grid-cols-2 md:grid-cols-4 gap-12 animate-fade-in-delayed">
+              <div className="text-center md:text-left">
+                <div className="text-7xl md:text-8xl font-light mb-4 bg-gradient-to-br from-white to-gray-500 bg-clip-text text-transparent">8+</div>
+                <div className="text-lg text-gray-400 tracking-wide">Digital Properties</div>
               </div>
-              <div>
-                <div className="text-4xl font-light mb-2">4</div>
-                <div className="text-sm text-gray-400">AI Intelligence Tools</div>
+              <div className="text-center md:text-left">
+                <div className="text-7xl md:text-8xl font-light mb-4 bg-gradient-to-br from-white to-gray-500 bg-clip-text text-transparent">4</div>
+                <div className="text-lg text-gray-400 tracking-wide">AI Intelligence Tools</div>
               </div>
-              <div>
-                <div className="text-4xl font-light mb-2">57+</div>
-                <div className="text-sm text-gray-400">Service Verticals</div>
+              <div className="text-center md:text-left">
+                <div className="text-7xl md:text-8xl font-light mb-4 bg-gradient-to-br from-white to-gray-500 bg-clip-text text-transparent">57+</div>
+                <div className="text-lg text-gray-400 tracking-wide">Service Verticals</div>
               </div>
-              <div>
-                <div className="text-4xl font-light mb-2">100%</div>
-                <div className="text-sm text-gray-400">Vertical Integration</div>
+              <div className="text-center md:text-left">
+                <div className="text-7xl md:text-8xl font-light mb-4 bg-gradient-to-br from-white to-gray-500 bg-clip-text text-transparent">100%</div>
+                <div className="text-lg text-gray-400 tracking-wide">Vertical Integration</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-px h-16 bg-gradient-to-b from-white/50 to-transparent"/>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-px h-24 bg-gradient-to-b from-white/50 to-transparent"/>
         </div>
       </section>
 
-      {/* Manifesto Section */}
-      <section id="manifesto" className="py-32 px-6 lg:px-8 bg-gradient-to-b from-black via-zinc-950 to-black relative">
+      {/* Manifesto Section - EXPANDED */}
+      <section id="manifesto" className="py-48 px-8 lg:px-12 bg-gradient-to-b from-black via-zinc-950 to-black relative">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900 via-transparent to-transparent"/>
         </div>
 
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="space-y-16">
-            <div className="text-center mb-20">
-              <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <div className="space-y-24">
+            <div className="text-center mb-32">
+              <h2 className="text-6xl md:text-8xl lg:text-9xl font-light mb-10 tracking-tight">
                 The Manifesto
               </h2>
-              <div className="h-px w-24 bg-white/30 mx-auto"/>
+              <div className="h-px w-32 bg-white/30 mx-auto"/>
             </div>
 
-            <div className="space-y-12 text-xl md:text-2xl font-light leading-relaxed text-gray-300">
-              <div className="p-8 border-l-2 border-white/20 hover:border-white/60 transition-all duration-500 hover:translate-x-2">
-                <p className="text-white text-2xl mb-4">To Our Clients and Partners,</p>
+            <div className="space-y-20 text-2xl md:text-4xl lg:text-5xl font-light leading-[1.6] text-gray-300">
+              <div className="p-12 md:p-16 border-l-4 border-white/20 hover:border-white/60 transition-all duration-500 hover:translate-x-4">
+                <p className="text-white text-3xl md:text-5xl mb-8">To Our Clients and Partners,</p>
                 <p>
                   For too long, the property industry in North West London has been defined by <span className="text-white">fragmentation</span>.
                 </p>
               </div>
 
-              <div className="p-8 border-l-2 border-white/20 hover:border-white/60 transition-all duration-500 hover:translate-x-2">
+              <div className="p-12 md:p-16 border-l-4 border-white/20 hover:border-white/60 transition-all duration-500 hover:translate-x-4">
                 <p>
                   The Architect doesn't talk to the Builder. The Builder doesn't understand the Planning Officer.
                   The Maintenance team is reactive, not proactive. And the Client? The Client is left managing
@@ -188,24 +188,24 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="p-12 bg-white/5 backdrop-blur-sm border border-white/10 my-12">
-                <p className="text-white text-3xl text-center font-normal">
+              <div className="p-16 md:p-24 bg-white/5 backdrop-blur-sm border-2 border-white/10 my-20">
+                <p className="text-white text-4xl md:text-6xl lg:text-7xl text-center font-normal leading-tight">
                   At Hampstead Renovations Group,<br/>we rejected this model.
                 </p>
               </div>
 
-              <div className="p-8 border-l-2 border-white/20 hover:border-white/60 transition-all duration-500 hover:translate-x-2">
+              <div className="p-12 md:p-16 border-l-4 border-white/20 hover:border-white/60 transition-all duration-500 hover:translate-x-4">
                 <p>
                   We realized that in the 21st century, you cannot build superior homes just by pouring better
-                  concrete. You must build better <span className="text-white italic">systems</span>.
+                  concrete. You must build better <span className="text-white italic text-5xl md:text-6xl">systems</span>.
                 </p>
               </div>
 
-              <div className="pt-16">
-                <h3 className="text-4xl md:text-5xl font-light mb-12 text-white text-center">
+              <div className="pt-24">
+                <h3 className="text-5xl md:text-7xl lg:text-8xl font-light mb-16 text-white text-center">
                   Code and Concrete
                 </h3>
-                <p className="text-center mb-8">
+                <p className="text-center mb-12 text-3xl md:text-4xl">
                   We have spent the last decade building a vertically integrated ecosystem<br/>
                   that owns every vertical of the property lifecycle:
                 </p>
@@ -215,22 +215,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ecosystem Grid */}
-      <section id="ecosystem" className="py-32 px-6 lg:px-8 bg-black relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-light mb-6">The Consumer Brands</h2>
-            <p className="text-xl text-gray-400">Division 1: Front-Facing Services</p>
+      {/* Ecosystem Grid - LARGER CARDS */}
+      <section id="ecosystem" className="py-48 px-8 lg:px-12 bg-black relative">
+        <div className="max-w-[1800px] mx-auto">
+          <div className="text-center mb-32">
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-light mb-8">The Consumer Brands</h2>
+            <p className="text-2xl md:text-3xl text-gray-400">Division 1: Front-Facing Services</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-48">
             {[
               {
                 num: "01",
                 title: "HRG Holding",
                 subtitle: "The Mothership",
                 desc: "Corporate HQ. Investor relations & group strategy. The command center for the entire ecosystem.",
-                tech: "Next.js 14"
+                tech: "Next.js 15"
               },
               {
                 num: "02",
@@ -251,7 +251,7 @@ export default function Home() {
                 title: "Hampstead On-Demand",
                 subtitle: "The Booking Engine",
                 desc: "Uber-style booking for 57 property maintenance services. From plumbing to electrical work.",
-                tech: "Next.js 14"
+                tech: "Next.js 15"
               },
               {
                 num: "05",
@@ -263,31 +263,31 @@ export default function Home() {
             ].map((brand, i) => (
               <div
                 key={i}
-                className="group relative p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-zinc-900/50 to-black backdrop-blur-sm"
+                className="group relative p-12 md:p-14 border-2 border-white/10 hover:border-white/30 transition-all duration-500 hover:-translate-y-3 bg-gradient-to-br from-zinc-900/50 to-black backdrop-blur-sm"
               >
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/5 group-hover:to-purple-600/5 transition-all duration-500"/>
 
                 <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="text-6xl font-light text-white/10 group-hover:text-white/20 transition-colors">
+                  <div className="flex items-start justify-between mb-10">
+                    <div className="text-8xl md:text-9xl font-light text-white/10 group-hover:text-white/20 transition-colors">
                       {brand.num}
                     </div>
-                    <div className="text-xs px-3 py-1 border border-white/20 text-gray-400">
+                    <div className="text-sm px-4 py-2 border border-white/20 text-gray-400">
                       {brand.tech}
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-light mb-2 text-white group-hover:text-blue-300 transition-colors">
+                  <h3 className="text-4xl md:text-5xl font-light mb-4 text-white group-hover:text-blue-300 transition-colors">
                     {brand.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-4 italic">{brand.subtitle}</p>
-                  <p className="text-gray-400 leading-relaxed text-sm">
+                  <p className="text-lg text-gray-500 mb-6 italic">{brand.subtitle}</p>
+                  <p className="text-gray-400 leading-relaxed text-xl">
                     {brand.desc}
                   </p>
 
-                  <div className="mt-6 flex items-center text-sm text-gray-500 group-hover:text-white transition-colors">
+                  <div className="mt-10 flex items-center text-lg text-gray-500 group-hover:text-white transition-colors">
                     <span>Explore</span>
-                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-6 h-6 ml-3 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -296,13 +296,13 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Intelligence Grid */}
-          <div id="intelligence" className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-light mb-6">The Intelligence Grid</h2>
-            <p className="text-xl text-gray-400">Division 2: AI & Data Tools</p>
+          {/* Intelligence Grid - LARGER */}
+          <div id="intelligence" className="text-center mb-32">
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-light mb-8">The Intelligence Grid</h2>
+            <p className="text-2xl md:text-3xl text-gray-400">Division 2: AI & Data Tools</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12">
             {[
               {
                 icon: "🧠",
@@ -331,59 +331,59 @@ export default function Home() {
             ].map((tool, i) => (
               <div
                 key={i}
-                className="group relative p-10 border border-blue-500/20 hover:border-blue-400/60 transition-all duration-500 bg-gradient-to-br from-blue-950/20 to-purple-950/20 backdrop-blur-sm hover:shadow-2xl hover:shadow-blue-500/10"
+                className="group relative p-16 md:p-20 border-2 border-blue-500/20 hover:border-blue-400/60 transition-all duration-500 bg-gradient-to-br from-blue-950/20 to-purple-950/20 backdrop-blur-sm hover:shadow-2xl hover:shadow-blue-500/10"
               >
-                <div className="text-5xl mb-6 filter grayscale group-hover:grayscale-0 transition-all duration-500">
+                <div className="text-8xl mb-10 filter grayscale group-hover:grayscale-0 transition-all duration-500">
                   {tool.icon}
                 </div>
 
-                <h3 className="text-3xl font-light mb-4 text-white group-hover:text-blue-300 transition-colors">
+                <h3 className="text-4xl md:text-5xl font-light mb-8 text-white group-hover:text-blue-300 transition-colors">
                   {tool.title}
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-400 leading-relaxed mb-10 text-xl md:text-2xl">
                   {tool.desc}
                 </p>
 
-                <div className="text-xs px-3 py-1 border border-blue-500/30 text-blue-400 inline-block">
+                <div className="text-sm px-4 py-2 border border-blue-500/30 text-blue-400 inline-block">
                   {tool.tech}
                 </div>
 
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"/>
+                <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"/>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The New Standard */}
-      <section className="py-40 px-6 lg:px-8 bg-gradient-to-b from-black via-zinc-950 to-black relative overflow-hidden">
+      {/* The New Standard - MASSIVE */}
+      <section className="py-56 px-8 lg:px-12 bg-gradient-to-b from-black via-zinc-950 to-black relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"/>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"/>
         </div>
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-light mb-16 leading-tight">
+        <div className="max-w-[1600px] mx-auto text-center relative z-10">
+          <h2 className="text-6xl md:text-9xl lg:text-[12rem] font-light mb-24 leading-tight">
             The New Standard
           </h2>
 
-          <div className="space-y-12 text-2xl md:text-3xl font-light text-gray-300">
-            <p>
+          <div className="space-y-20 text-3xl md:text-5xl lg:text-6xl font-light text-gray-300">
+            <p className="leading-relaxed">
               We do not just offer services.<br/>
-              We offer <span className="text-white text-4xl md:text-5xl font-normal">Certainty</span>.
+              We offer <span className="text-white text-5xl md:text-7xl lg:text-8xl font-normal">Certainty</span>.
             </p>
 
-            <p className="max-w-4xl mx-auto text-xl md:text-2xl">
+            <p className="max-w-5xl mx-auto text-2xl md:text-4xl lg:text-5xl leading-relaxed">
               Whether you are a homeowner in Belsize Park requiring a seamless renovation,<br/>
               or a developer in Swiss Cottage needing an AI-backed planning argument<br/>
               to unlock site value, you are no longer hiring a "tradesman."
             </p>
 
-            <div className="py-16">
-              <p className="text-3xl md:text-5xl text-white font-light leading-tight">
+            <div className="py-24">
+              <p className="text-4xl md:text-6xl lg:text-8xl text-white font-light leading-tight">
                 You are plugging into the most<br/>
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-5xl md:text-7xl lg:text-9xl">
                   advanced property infrastructure
                 </span><br/>
                 in London.
@@ -391,38 +391,38 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-20 h-px w-48 bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto"/>
-          <p className="mt-12 text-sm tracking-[0.4em] text-gray-500">
-            WELCOME TO THE GROUP
+          <div className="mt-32 h-px w-64 bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto"/>
+          <p className="mt-16 text-base tracking-[0.5em] text-gray-500 uppercase">
+            Welcome to the Group
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-32 px-6 lg:px-8 bg-black border-t border-white/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16">
+      {/* Contact Section - LARGER */}
+      <section id="contact" className="py-48 px-8 lg:px-12 bg-black border-t border-white/10">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-24">
             <div>
-              <h3 className="text-4xl font-light mb-8">Get in Touch</h3>
-              <div className="space-y-6 text-gray-400">
+              <h3 className="text-5xl md:text-6xl font-light mb-12">Get in Touch</h3>
+              <div className="space-y-8 text-gray-400 text-xl">
                 <div>
-                  <p className="text-sm text-gray-500 mb-1">Address</p>
-                  <p className="text-white">Hampstead Renovations Group</p>
-                  <p>Palace Court</p>
-                  <p>NW3, London</p>
+                  <p className="text-base text-gray-500 mb-2 uppercase tracking-wide">Address</p>
+                  <p className="text-white text-2xl">Hampstead Renovations Group</p>
+                  <p className="text-xl">Palace Court</p>
+                  <p className="text-xl">NW3, London</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 mb-1">Inquiries</p>
-                  <a href="mailto:hello@hampstead.group" className="text-white hover:text-blue-400 transition-colors">
+                  <p className="text-base text-gray-500 mb-2 uppercase tracking-wide">Inquiries</p>
+                  <a href="mailto:hello@hampstead.group" className="text-white text-2xl hover:text-blue-400 transition-colors">
                     hello@hampstead.group
                   </a>
                 </div>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-16">
                 <Link
                   href="#ecosystem"
-                  className="inline-block px-8 py-4 bg-white text-black hover:bg-gray-100 transition-all duration-300 font-light tracking-wider"
+                  className="inline-block px-12 py-6 bg-white text-black hover:bg-gray-100 transition-all duration-300 font-light tracking-[0.2em] text-lg"
                 >
                   SCHEDULE CONSULTATION
                 </Link>
@@ -430,8 +430,8 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-4xl font-light mb-8">Our Ecosystem</h3>
-              <div className="grid grid-cols-2 gap-6">
+              <h3 className="text-5xl md:text-6xl font-light mb-12">Our Ecosystem</h3>
+              <div className="grid grid-cols-2 gap-8">
                 {[
                   "HRG Holding",
                   "Hampstead Architects",
@@ -444,9 +444,9 @@ export default function Home() {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="p-4 border border-white/10 hover:border-white/30 hover:bg-white/5 transition-all duration-300 cursor-pointer group"
+                    className="p-6 border-2 border-white/10 hover:border-white/30 hover:bg-white/5 transition-all duration-300 cursor-pointer group"
                   >
-                    <span className="text-sm text-gray-400 group-hover:text-white transition-colors">
+                    <span className="text-lg text-gray-400 group-hover:text-white transition-colors">
                       {item}
                     </span>
                   </div>
@@ -458,9 +458,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 lg:px-8 bg-black border-t border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 space-y-4 md:space-y-0">
+      <footer className="py-16 px-8 lg:px-12 bg-black border-t border-white/10">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center text-base text-gray-500 space-y-6 md:space-y-0">
             <p>&copy; 2025 Hampstead Renovations Group. All rights reserved.</p>
             <p className="tracking-wider">Built with precision. Deployed with confidence.</p>
           </div>
