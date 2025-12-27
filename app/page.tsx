@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,280 +15,277 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/90 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'
+    <div className="min-h-screen bg-white text-black">
+      {/* Minimal Nav */}
+      <nav className={`fixed top-0 w-full z-50 transition-all ${
+        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-8 py-8">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="text-sm font-light tracking-[0.4em]">
-              HAMPSTEAD
-            </Link>
-
-            {/* Desktop Menu */}
-            <ul className="hidden md:flex space-x-12 text-sm font-light">
-              <li><Link href="#vision" className="hover:text-gray-400 transition-colors">Vision</Link></li>
-              <li><Link href="#ecosystem" className="hover:text-gray-400 transition-colors">Ecosystem</Link></li>
-              <li><Link href="#contact" className="hover:text-gray-400 transition-colors">Contact</Link></li>
-            </ul>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Menu"
-            >
-              <div className="w-6 h-5 flex flex-col justify-between">
-                <span className={`w-full h-0.5 bg-white transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}/>
-                <span className={`w-full h-0.5 bg-white transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}/>
-                <span className={`w-full h-0.5 bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}/>
-              </div>
-            </button>
+        <div className="max-w-[1400px] mx-auto px-12 py-6 flex justify-between items-center">
+          <Link href="/" className="text-xl font-bold">
+            HRG
+          </Link>
+          <div className="flex gap-10 text-sm">
+            <Link href="#vision" className="hover:opacity-60 transition">Vision</Link>
+            <Link href="#ecosystem" className="hover:opacity-60 transition">Ecosystem</Link>
+            <Link href="#contact" className="hover:opacity-60 transition">Contact</Link>
           </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <ul className="md:hidden pt-8 space-y-6 text-sm border-t border-white/10 mt-8">
-              <li><Link href="#vision" onClick={() => setMobileMenuOpen(false)}>Vision</Link></li>
-              <li><Link href="#ecosystem" onClick={() => setMobileMenuOpen(false)}>Ecosystem</Link></li>
-              <li><Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
-            </ul>
-          )}
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main>
-        {/* Hero Section - Full Screen */}
-        <section className="min-h-screen flex items-center justify-center px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            <p className="text-xs tracking-[0.5em] text-gray-500 uppercase mb-12">Palace Court, NW3</p>
-
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight leading-[1.1] mb-16">
-              Building the Future of<br />
-              North West London Property
+      {/* Hero - Split Screen Design */}
+      <section className="min-h-screen grid lg:grid-cols-2">
+        {/* Left - Dark Side */}
+        <div className="bg-black text-white flex items-center justify-center p-20">
+          <div className="max-w-xl">
+            <div className="text-sm tracking-[0.3em] text-gray-400 mb-8">PALACE COURT, NW3</div>
+            <h1 className="text-6xl font-bold mb-8 leading-tight">
+              The Operating System
             </h1>
-
-            <p className="text-xl md:text-2xl text-gray-400 font-light mb-20 max-w-3xl mx-auto leading-relaxed">
-              Vertically integrated property ecosystem.<br />
-              AI-powered planning. Luxury renovations.
+            <p className="text-2xl text-gray-300 mb-12 leading-relaxed">
+              For North West London Property
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="#ecosystem" className="px-10 py-4 bg-white text-black hover:bg-gray-100 transition-all text-sm tracking-widest font-light">
-                EXPLORE ECOSYSTEM
-              </Link>
-              <Link href="#vision" className="px-10 py-4 border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-sm tracking-widest font-light">
-                OUR VISION
-              </Link>
-            </div>
+            <Link href="#ecosystem" className="inline-block bg-white text-black px-8 py-4 hover:bg-gray-100 transition">
+              Enter →
+            </Link>
           </div>
-        </section>
+        </div>
 
-        {/* Stats Section - Huge Spacing */}
-        <section className="py-40 px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24">
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-extralight mb-6">8+</div>
-                <p className="text-sm text-gray-500 tracking-wider">DIGITAL PROPERTIES</p>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-extralight mb-6">4</div>
-                <p className="text-sm text-gray-500 tracking-wider">AI TOOLS</p>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-extralight mb-6">57+</div>
-                <p className="text-sm text-gray-500 tracking-wider">SERVICES</p>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-extralight mb-6">100%</div>
-                <p className="text-sm text-gray-500 tracking-wider">INTEGRATED</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Vision Section - Massive Padding */}
-        <section id="vision" className="py-40 px-8 bg-zinc-950">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-extralight mb-8">Our Vision</h2>
-              <div className="w-16 h-px bg-white/20 mx-auto"/>
-            </div>
-
-            <div className="space-y-16 text-lg md:text-xl leading-relaxed text-gray-300 font-light">
-              <p className="text-center">
-                For too long, the property industry in North West London<br className="hidden md:block" />
-                has been defined by fragmentation.
-              </p>
-
-              <p className="text-center">
-                The Architect doesn't talk to the Builder.<br />
-                The Builder doesn't understand the Planning Officer.<br />
-                The Maintenance team is reactive, not proactive.
-              </p>
-
-              <div className="py-16 px-12 bg-white/5 border border-white/10 my-20">
-                <p className="text-2xl md:text-3xl text-white font-light text-center leading-relaxed">
-                  At Hampstead Renovations Group,<br />
-                  we rejected this model.
-                </p>
-              </div>
-
-              <p className="text-center text-xl md:text-2xl">
-                We realized you cannot build superior homes<br className="hidden md:block" />
-                just by pouring better concrete.
-              </p>
-
-              <p className="text-center text-2xl md:text-3xl text-white">
-                You must build better <span className="italic">systems</span>.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Ecosystem Section - Consumer Brands */}
-        <section id="ecosystem" className="py-40 px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-extralight mb-6">Consumer Brands</h2>
-              <p className="text-gray-500 text-sm tracking-wider">FRONT-FACING SERVICES</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-32">
-              {[
-                { title: "HRG Holding", desc: "Corporate HQ & investor relations" },
-                { title: "Hampstead Architects", desc: "Heritage-sensitive design portfolio" },
-                { title: "Hampstead Security", desc: "24/7 emergency locksmith services" },
-                { title: "On-Demand Services", desc: "57 property maintenance services" },
-                { title: "Design Journal", desc: "Heritage & design content hub" },
-              ].map((item, i) => (
-                <div key={i} className="group p-12 border border-white/10 hover:border-white/30 transition-all bg-zinc-950/30">
-                  <h3 className="text-2xl font-light mb-6">{item.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Intelligence Grid - Huge Gap */}
-        <section className="py-40 px-8 bg-zinc-950">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-extralight mb-6">Intelligence Grid</h2>
-              <p className="text-gray-500 text-sm tracking-wider">AI & DATA TOOLS</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              {[
-                { title: "Planning Intelligence", desc: "AI consultant for planning documents" },
-                { title: "Heritage Checker", desc: "Listed building compliance verification" },
-                { title: "Precedent AI", desc: "Planning precedent search engine" },
-                { title: "Trade Compliance", desc: "Contractor verification system" },
-              ].map((item, i) => (
-                <div key={i} className="p-16 border border-blue-500/20 hover:border-blue-500/40 transition-all bg-blue-950/10">
-                  <h3 className="text-2xl font-light mb-6">{item.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Value Proposition - Massive Spacing */}
-        <section className="py-40 px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-20">
-            <h2 className="text-4xl md:text-5xl font-extralight">The New Standard</h2>
-
-            <div className="space-y-16 text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
+        {/* Right - Light Side */}
+        <div className="bg-white text-black flex items-center justify-center p-20">
+          <div className="max-w-xl">
+            <div className="space-y-8 text-lg leading-relaxed">
               <p>
-                We don't just offer services.
+                <strong>8+ Digital Properties.</strong><br />
+                <strong>4 AI Intelligence Tools.</strong><br />
+                <strong>57+ Property Services.</strong>
               </p>
-
-              <p className="text-3xl md:text-4xl text-white">
-                We offer <span className="italic">Certainty</span>.
+              <p className="text-gray-600">
+                We rejected the fragmented property model and built a vertically integrated ecosystem.
+                One codebase. One vision. Total certainty.
               </p>
-
-              <p className="text-lg md:text-xl pt-8">
-                Whether you're a homeowner in Belsize Park<br className="hidden md:block" />
-                or a developer in Swiss Cottage,<br />
-                you're no longer hiring a tradesman.
-              </p>
-
-              <p className="text-3xl md:text-4xl text-white pt-12">
-                You're plugging into the most advanced<br />
-                property infrastructure in London.
-              </p>
-            </div>
-
-            <div className="pt-16">
-              <p className="text-xs tracking-[0.5em] text-gray-500 uppercase">Welcome to the Group</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact Section - Clean Layout */}
-        <section id="contact" className="py-40 px-8 bg-zinc-950">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-24">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-extralight mb-12">Get in Touch</h2>
+      {/* Vision - Full Width Statement */}
+      <section id="vision" className="py-32 bg-gray-50">
+        <div className="max-w-[900px] mx-auto px-12 text-center">
+          <h2 className="text-5xl font-bold mb-16">The Problem</h2>
 
-                <div className="space-y-8 text-gray-400">
-                  <div>
-                    <p className="text-xs text-gray-600 uppercase tracking-wider mb-3">Address</p>
-                    <p className="text-white text-lg mb-1">Hampstead Renovations Group</p>
-                    <p className="text-lg">Palace Court, NW3, London</p>
-                  </div>
+          <div className="space-y-12 text-xl text-gray-700">
+            <p>
+              The Architect doesn't talk to the Builder.
+            </p>
+            <p>
+              The Builder doesn't understand the Planning Officer.
+            </p>
+            <p>
+              The Maintenance team is reactive, not proactive.
+            </p>
+          </div>
 
-                  <div>
-                    <p className="text-xs text-gray-600 uppercase tracking-wider mb-3">Email</p>
-                    <a href="mailto:hello@hampstead.group" className="text-white text-lg hover:text-gray-400 transition-colors">
-                      hello@hampstead.group
-                    </a>
-                  </div>
+          <div className="my-24 py-16 border-y border-black">
+            <p className="text-4xl font-bold">
+              At Hampstead Renovations Group,<br />
+              we rejected this model.
+            </p>
+          </div>
+
+          <p className="text-3xl font-bold">
+            You cannot build superior homes<br />
+            just by pouring better concrete.
+          </p>
+
+          <p className="text-5xl font-bold mt-12">
+            You must build better systems.
+          </p>
+        </div>
+      </section>
+
+      {/* Ecosystem - Card Grid */}
+      <section id="ecosystem" className="py-32">
+        <div className="max-w-[1400px] mx-auto px-12">
+
+          {/* Consumer Brands */}
+          <div className="mb-32">
+            <div className="mb-16">
+              <div className="text-sm tracking-[0.3em] text-gray-500 mb-4">DIVISION I</div>
+              <h2 className="text-5xl font-bold">Consumer Brands</h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "HRG Holding",
+                  desc: "Corporate HQ & investor relations",
+                  color: "border-l-4 border-black"
+                },
+                {
+                  title: "Hampstead Architects",
+                  desc: "Heritage-sensitive design portfolio",
+                  color: "border-l-4 border-gray-400"
+                },
+                {
+                  title: "Hampstead Security",
+                  desc: "24/7 emergency locksmith services",
+                  color: "border-l-4 border-gray-600"
+                },
+                {
+                  title: "On-Demand Services",
+                  desc: "57 property maintenance services",
+                  color: "border-l-4 border-gray-500"
+                },
+                {
+                  title: "Design Journal",
+                  desc: "Heritage & design content hub",
+                  color: "border-l-4 border-gray-700"
+                },
+              ].map((item, i) => (
+                <div key={i} className={`bg-white p-8 shadow-lg hover:shadow-xl transition ${item.color}`}>
+                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Intelligence Grid */}
+          <div>
+            <div className="mb-16">
+              <div className="text-sm tracking-[0.3em] text-gray-500 mb-4">DIVISION II</div>
+              <h2 className="text-5xl font-bold">Intelligence Grid</h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Planning Intelligence",
+                  desc: "AI consultant for planning documents",
+                  icon: "🤖"
+                },
+                {
+                  title: "Heritage Checker",
+                  desc: "Listed building compliance verification",
+                  icon: "🏛️"
+                },
+                {
+                  title: "Precedent AI",
+                  desc: "Planning precedent search engine",
+                  icon: "🔍"
+                },
+                {
+                  title: "Trade Compliance",
+                  desc: "Contractor verification system",
+                  icon: "✅"
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-black text-white p-12 hover:bg-gray-900 transition">
+                  <div className="text-5xl mb-6">{item.icon}</div>
+                  <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
+                  <p className="text-gray-300 text-lg">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Prop - Bold Statement */}
+      <section className="py-32 bg-black text-white">
+        <div className="max-w-[900px] mx-auto px-12 text-center">
+          <h2 className="text-6xl font-bold mb-16">
+            We Don't Offer Services
+          </h2>
+
+          <p className="text-7xl font-bold mb-20">
+            We Offer Certainty
+          </p>
+
+          <div className="space-y-8 text-xl text-gray-300">
+            <p>
+              Whether you're a homeowner in Belsize Park or a developer in Swiss Cottage,
+            </p>
+            <p className="text-2xl text-white">
+              You're no longer hiring a tradesman.
+            </p>
+            <p className="text-3xl font-bold text-white mt-12">
+              You're plugging into the most advanced<br />
+              property infrastructure in London.
+            </p>
+          </div>
+
+          <div className="mt-20 pt-12 border-t border-white/20">
+            <p className="text-sm tracking-[0.3em] text-gray-500">WELCOME TO THE GROUP</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact - Side by Side */}
+      <section id="contact" className="py-32">
+        <div className="max-w-[1400px] mx-auto px-12">
+          <div className="grid md:grid-cols-2 gap-20">
+
+            {/* Contact Info */}
+            <div>
+              <h2 className="text-5xl font-bold mb-12">Get in Touch</h2>
+
+              <div className="space-y-8 mb-12">
+                <div>
+                  <div className="text-sm tracking-wider text-gray-500 mb-2">ADDRESS</div>
+                  <p className="text-xl font-bold">Hampstead Renovations Group</p>
+                  <p className="text-xl">Palace Court, NW3, London</p>
                 </div>
 
-                <div className="mt-12">
-                  <Link href="#ecosystem" className="inline-block px-10 py-4 bg-white text-black hover:bg-gray-100 transition-all text-sm tracking-widest font-light">
-                    SCHEDULE CONSULTATION
-                  </Link>
+                <div>
+                  <div className="text-sm tracking-wider text-gray-500 mb-2">EMAIL</div>
+                  <a href="mailto:hello@hampstead.group" className="text-xl font-bold hover:opacity-60 transition">
+                    hello@hampstead.group
+                  </a>
                 </div>
               </div>
 
-              <div>
-                <h2 className="text-3xl md:text-4xl font-extralight mb-12">Our Ecosystem</h2>
+              <Link href="#ecosystem" className="inline-block bg-black text-white px-8 py-4 hover:bg-gray-800 transition">
+                Schedule Consultation
+              </Link>
+            </div>
 
-                <div className="grid grid-cols-2 gap-6">
-                  {[
-                    "HRG Holding",
-                    "Architects",
-                    "Security",
-                    "On-Demand",
-                    "Design Journal",
-                    "Planning AI",
-                    "Heritage Check",
-                    "Compliance"
-                  ].map((item, i) => (
-                    <div key={i} className="p-6 border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-sm text-gray-400 text-center">
-                      {item}
-                    </div>
-                  ))}
-                </div>
+            {/* Ecosystem List */}
+            <div>
+              <h2 className="text-5xl font-bold mb-12">The Ecosystem</h2>
+
+              <div className="space-y-4">
+                {[
+                  "HRG Holding",
+                  "Hampstead Architects",
+                  "Hampstead Security",
+                  "On-Demand Services",
+                  "Design Journal",
+                  "Planning Intelligence AI",
+                  "Heritage Checker",
+                  "Precedent AI",
+                  "Trade Compliance"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 py-3 border-b border-gray-200">
+                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <span className="text-lg">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="py-12 px-8 border-t border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-600 font-light">
-          <p>&copy; 2025 Hampstead Renovations Group. All rights reserved.</p>
-          <p className="tracking-wider">Built with precision. Deployed with confidence.</p>
+      <footer className="py-12 bg-black text-white">
+        <div className="max-w-[1400px] mx-auto px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-gray-400">
+            © 2025 Hampstead Renovations Group. All rights reserved.
+          </p>
+          <p className="text-sm text-gray-400">
+            Built with precision. Deployed with confidence.
+          </p>
         </div>
       </footer>
     </div>
