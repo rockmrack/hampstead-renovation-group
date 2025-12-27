@@ -127,6 +127,11 @@ export default function Home() {
                   color: "border-l-4 border-gray-400"
                 },
                 {
+                  title: "Hampstead Renovations",
+                  desc: "Premium property renovations & construction",
+                  color: "border-l-4 border-gray-800"
+                },
+                {
                   title: "Hampstead Security",
                   desc: "24/7 emergency locksmith services",
                   color: "border-l-4 border-gray-600"
@@ -258,6 +263,7 @@ export default function Home() {
                 {[
                   "HRG Holding",
                   "Hampstead Architects",
+                  "Hampstead Renovations",
                   "Hampstead Security",
                   "On-Demand Services",
                   "Design Journal",
