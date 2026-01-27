@@ -3,5 +3,11 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["lhr1"]
+  "regions": ["lhr1"],
+  "rewrites": [
+    {
+      "source": "/areas/:path*",
+      "destination": "https://pseo-engine.vercel.app/areas/:path*"
+    }
+  ]
 }
